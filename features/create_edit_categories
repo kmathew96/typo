@@ -1,0 +1,21 @@
+Feature: Create and Edit Categories
+  As a blog administrator
+  In order to organize the articles according to genre
+  I want to be able to create and edit categories in my blog
+
+  Background:
+    Given the blog is set up
+    And I am logged into the admin panel
+
+  Scenario: Successfully create a new category
+    Given I am on the new category page
+    When I fill in "category_name" with "Name-Test"
+    And I press "Save"
+    Then I should see "Name-Test" 
+    
+  Scenario: Successfully edit a category
+    Given I am on the new category page
+    When I follow "Edit"
+    And I fill in "category_description" with "Edit-Test"
+    Then I should see "Edit-Test"
+    
